@@ -19,7 +19,8 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.cellLayoutMarginsFollowReadableWidth = true
+//        tableView.cellLayoutMarginsFollowReadableWidth = true
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -47,52 +48,55 @@ class TableViewController: UITableViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //建立動作選單
-        let optionMenu = UIAlertController(title: nil, message: "What do you want to do", preferredStyle: .actionSheet)
-        
-        //ipad呈現選單的方式為popover的方式，所以須多加判斷以防在ipad使用時閃退
-        if let popoverController = optionMenu.popoverPresentationController {
-            if let cell = tableView.cellForRow(at: indexPath) {
-                popoverController.sourceView = cell
-                popoverController.sourceRect = cell.bounds
-            }
-        }
-        
-        //加入打電話動作
-        let callActionHandler = {(action: UIAlertAction!) -> Void in
-            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet. Please retry later", preferredStyle: .alert)
-            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alertMessage, animated: true, completion: nil)
-        }
-        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: .default, handler: callActionHandler)
-        
-        //加入打卡動作
-        let title = restaurantVisited[indexPath.row] ? "Undo CheckIn" : "Check In"
-        let checkInAction = UIAlertAction(title: title, style: .default, handler: {(action: UIAlertAction) -> Void in
-            let cell = tableView.cellForRow(at: indexPath) as! TableViewCell
-            
-            //由於cell reuse的關係，當螢幕往下拉時，會有同列的資料被勾選，所以要記錄哪一列被標記來預防此錯誤
-            self.restaurantVisited[indexPath.row] = (self.restaurantVisited[indexPath.row]) ? false : true
-            
-            cell.heartImage.isHidden = (self.restaurantVisited[indexPath.row]) ? false : true
-            
-        })
-        
-        //取消動作
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
-        optionMenu.addAction(callAction)
-        optionMenu.addAction(checkInAction)
-        optionMenu.addAction(cancelAction)
-        
-        //呈現選單
-        present(optionMenu, animated: true, completion: nil)
-        
-        //取消列的選取
-        tableView.deselectRow(at: indexPath, animated: false)
-    }
+    /*
+     導入導覽控制器:將改為點擊後另開視窗
+    */
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//        //建立動作選單
+//        let optionMenu = UIAlertController(title: nil, message: "What do you want to do", preferredStyle: .actionSheet)
+//
+//        //ipad呈現選單的方式為popover的方式，所以須多加判斷以防在ipad使用時閃退
+//        if let popoverController = optionMenu.popoverPresentationController {
+//            if let cell = tableView.cellForRow(at: indexPath) {
+//                popoverController.sourceView = cell
+//                popoverController.sourceRect = cell.bounds
+//            }
+//        }
+//
+//        //加入打電話動作
+//        let callActionHandler = {(action: UIAlertAction!) -> Void in
+//            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet. Please retry later", preferredStyle: .alert)
+//            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//            self.present(alertMessage, animated: true, completion: nil)
+//        }
+//        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: .default, handler: callActionHandler)
+//
+//        //加入打卡動作
+//        let title = restaurantVisited[indexPath.row] ? "Undo CheckIn" : "Check In"
+//        let checkInAction = UIAlertAction(title: title, style: .default, handler: {(action: UIAlertAction) -> Void in
+//            let cell = tableView.cellForRow(at: indexPath) as! TableViewCell
+//
+//            //由於cell reuse的關係，當螢幕往下拉時，會有同列的資料被勾選，所以要記錄哪一列被標記來預防此錯誤
+//            self.restaurantVisited[indexPath.row] = (self.restaurantVisited[indexPath.row]) ? false : true
+//
+//            cell.heartImage.isHidden = (self.restaurantVisited[indexPath.row]) ? false : true
+//
+//        })
+//
+//        //取消動作
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//
+//        optionMenu.addAction(callAction)
+//        optionMenu.addAction(checkInAction)
+//        optionMenu.addAction(cancelAction)
+//
+//        //呈現選單
+//        present(optionMenu, animated: true, completion: nil)
+//
+//        //取消列的選取
+//        tableView.deselectRow(at: indexPath, animated: false)
+//    }
     
     //內建刪除列的方法
 //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -193,14 +197,21 @@ class TableViewController: UITableViewController {
     }
     
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showRestaurantDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! RestarantDetailViewController
+                destinationController.restaurantName = restaurantImage[indexPath.row]
+                destinationController.labelName = restaurantList[indexPath.row]
+                destinationController.labelLocation = locationList[indexPath.row]
+                destinationController.labelType = typeList[indexPath.row]
+            }
+        }
     }
-    */
+    
 
 }
