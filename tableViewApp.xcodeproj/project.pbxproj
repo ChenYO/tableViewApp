@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		7634D6F8213FBED0003A73FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7634D6F7213FBED0003A73FF /* AppDelegate.swift */; };
-		7634D6FA213FBED0003A73FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7634D6F9213FBED0003A73FF /* ViewController.swift */; };
 		7634D6FD213FBED0003A73FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7634D6FB213FBED0003A73FF /* Main.storyboard */; };
 		7634D6FF213FBED4003A73FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7634D6FE213FBED4003A73FF /* Assets.xcassets */; };
 		7634D702213FBED4003A73FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7634D700213FBED4003A73FF /* LaunchScreen.storyboard */; };
+		7634D70B213FBF5D003A73FF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7634D70A213FBF5D003A73FF /* TableViewController.swift */; };
+		7634D7112140BA74003A73FF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7634D7102140BA74003A73FF /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7634D6F4213FBED0003A73FF /* tableViewApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tableViewApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7634D6F7213FBED0003A73FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7634D6F9213FBED0003A73FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7634D6FC213FBED0003A73FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7634D6FE213FBED4003A73FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7634D701213FBED4003A73FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7634D703213FBED4003A73FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7634D70A213FBF5D003A73FF /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		7634D7102140BA74003A73FF /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		7634D6F6213FBED0003A73FF /* tableViewApp */ = {
 			isa = PBXGroup;
 			children = (
-				7634D6F7213FBED0003A73FF /* AppDelegate.swift */,
-				7634D6F9213FBED0003A73FF /* ViewController.swift */,
+				7634D709213FBEF6003A73FF /* Supporting Files */,
 				7634D6FB213FBED0003A73FF /* Main.storyboard */,
-				7634D6FE213FBED4003A73FF /* Assets.xcassets */,
-				7634D700213FBED4003A73FF /* LaunchScreen.storyboard */,
+				7634D7102140BA74003A73FF /* TableViewCell.swift */,
+				7634D70A213FBF5D003A73FF /* TableViewController.swift */,
 				7634D703213FBED4003A73FF /* Info.plist */,
 			);
 			path = tableViewApp;
+			sourceTree = "<group>";
+		};
+		7634D709213FBEF6003A73FF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7634D6F7213FBED0003A73FF /* AppDelegate.swift */,
+				7634D6FE213FBED4003A73FF /* Assets.xcassets */,
+				7634D700213FBED4003A73FF /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7634D6FA213FBED0003A73FF /* ViewController.swift in Sources */,
+				7634D7112140BA74003A73FF /* TableViewCell.swift in Sources */,
+				7634D70B213FBF5D003A73FF /* TableViewController.swift in Sources */,
 				7634D6F8213FBED0003A73FF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +293,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97993CXFRL;
 				INFOPLIST_FILE = tableViewApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,6 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97993CXFRL;
 				INFOPLIST_FILE = tableViewApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
