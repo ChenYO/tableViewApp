@@ -15,19 +15,19 @@ class RestarantDetailViewController: UIViewController {
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var type: UILabel!
     @IBOutlet weak var restaurantImage: UIImageView!
-    var restaurantName = ""
-    var labelName = ""
-    var labelLocation = ""
-    var labelType = ""
+    var restaurant: Restaurant = Restaurant()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        name.text = labelName
-        location.text = labelLocation
-        type.text = labelType
-        restaurantImage.image = UIImage(named: restaurantName)
+        
+        name.text = restaurant.name
+        location.text = restaurant.location
+        type.text = restaurant.type
+        restaurantImage.image = UIImage(named: restaurant.image)
+        
         navigationItem.largeTitleDisplayMode = .never
+            
+       
     }
 
     override func didReceiveMemoryWarning() {

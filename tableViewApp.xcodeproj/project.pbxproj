@@ -14,6 +14,7 @@
 		7634D70B213FBF5D003A73FF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7634D70A213FBF5D003A73FF /* TableViewController.swift */; };
 		7634D7112140BA74003A73FF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7634D7102140BA74003A73FF /* TableViewCell.swift */; };
 		7634D713214110C8003A73FF /* RestarantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7634D712214110C8003A73FF /* RestarantDetailViewController.swift */; };
+		7634D715214207C1003A73FF /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7634D714214207C1003A73FF /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		7634D70A213FBF5D003A73FF /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7634D7102140BA74003A73FF /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		7634D712214110C8003A73FF /* RestarantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestarantDetailViewController.swift; sourceTree = "<group>"; };
+		7634D714214207C1003A73FF /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +60,11 @@
 		7634D6F6213FBED0003A73FF /* tableViewApp */ = {
 			isa = PBXGroup;
 			children = (
+				7634D71821420DFA003A73FF /* View */,
+				7634D71721420DE0003A73FF /* Controller */,
+				7634D71621420DD1003A73FF /* Model */,
 				7634D709213FBEF6003A73FF /* Supporting Files */,
 				7634D6FB213FBED0003A73FF /* Main.storyboard */,
-				7634D712214110C8003A73FF /* RestarantDetailViewController.swift */,
-				7634D7102140BA74003A73FF /* TableViewCell.swift */,
-				7634D70A213FBF5D003A73FF /* TableViewController.swift */,
 				7634D703213FBED4003A73FF /* Info.plist */,
 			);
 			path = tableViewApp;
@@ -76,6 +78,31 @@
 				7634D700213FBED4003A73FF /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7634D71621420DD1003A73FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7634D714214207C1003A73FF /* Restaurant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7634D71721420DE0003A73FF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7634D70A213FBF5D003A73FF /* TableViewController.swift */,
+				7634D712214110C8003A73FF /* RestarantDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7634D71821420DFA003A73FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7634D7102140BA74003A73FF /* TableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7634D715214207C1003A73FF /* Restaurant.swift in Sources */,
 				7634D713214110C8003A73FF /* RestarantDetailViewController.swift in Sources */,
 				7634D7112140BA74003A73FF /* TableViewCell.swift in Sources */,
 				7634D70B213FBF5D003A73FF /* TableViewController.swift in Sources */,

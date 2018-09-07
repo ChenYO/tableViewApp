@@ -106,17 +106,16 @@
         <!--Restarant Detail View Controller-->
         <scene sceneID="fJX-aO-Wqt">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A7d-UJ-d6T" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="2XM-SR-xHq" customClass="RestarantDetailViewController" customModule="tableViewApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CX0-ng-644">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qWS-t9-0dX">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="15" width="375" height="652"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gU9-ku-2Dw">
-                                <rect key="frame" x="160.5" y="305.5" width="54.5" height="56.5"/>
+                                <rect key="frame" x="160.5" y="313" width="54.5" height="56.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lto-AS-035">
                                         <rect key="frame" x="5" y="0.0" width="44.5" height="20.5"/>
@@ -145,7 +144,7 @@
                             <constraint firstItem="qWS-t9-0dX" firstAttribute="bottom" secondItem="vzA-ii-Y6M" secondAttribute="bottom" id="cla-bQ-uNz"/>
                             <constraint firstItem="gU9-ku-2Dw" firstAttribute="centerX" secondItem="qWS-t9-0dX" secondAttribute="centerX" id="e8y-Rf-jO2"/>
                             <constraint firstItem="qWS-t9-0dX" firstAttribute="trailing" secondItem="vzA-ii-Y6M" secondAttribute="trailing" id="htm-N6-m9g"/>
-                            <constraint firstItem="qWS-t9-0dX" firstAttribute="top" secondItem="CX0-ng-644" secondAttribute="top" id="r6h-a4-PB7"/>
+                            <constraint firstItem="qWS-t9-0dX" firstAttribute="top" secondItem="CX0-ng-644" secondAttribute="top" constant="15" id="r6h-a4-PB7"/>
                             <constraint firstItem="qWS-t9-0dX" firstAttribute="leading" secondItem="vzA-ii-Y6M" secondAttribute="leading" id="zu3-FO-zaG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vzA-ii-Y6M"/>
@@ -157,6 +156,7 @@
                         <outlet property="type" destination="mMw-Yp-1wn" id="I3n-lb-vHj"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A7d-UJ-d6T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1696.8" y="80.50974512743629"/>
         </scene>
